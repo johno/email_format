@@ -1,12 +1,14 @@
 # EmailFormat
 
-TODO: Write a gem description
+This gem uses the thorough email validation check used by the (email_regex gem)[https://github.com/dougwig/email_regex] written by Doug Wiegley which "provides a valid email regex that conforms to most valid RFC edges cases (disallows backticks), and allows for a few illegal patterns that are in common use".
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'email_format'
+```ruby
+gem 'email_format'
+```
 
 And then execute:
 
@@ -18,7 +20,48 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Using it is as simple as using the `validates` keyword in your model:
+
+```ruby
+class User < ActiveRecord::Base
+  
+  # ...
+
+  validates :email, email_format: true
+
+  # ...
+
+end
+```
+
+Now the email attribute will be validated accordingly:
+
+```ruby
+User.new('valid@email.com').valid? # => true
+User.new('invalid_email@@').valid? # => false
+```
+
+Also, the model in question doesn't need to inherit from ActiveRecord::Base, you only need to `include ActiveModel::Validations` in your class:
+
+```ruby
+require 'email_format'
+
+class Awesome
+  include ActiveModel::Validations
+
+  attr_accessor :email
+
+  validates :email, email_format: true
+end
+
+awesome = Awesome.new
+
+awesome.email = "valid@email.com"
+awesome.valid? # => true
+
+awesome.email = "invalid_email"
+awesome.valid? # => false
+```
 
 ## Contributing
 
