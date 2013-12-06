@@ -1,6 +1,6 @@
-# EmailFormat
+# Email Format
 
-This gem uses the thorough email validation check used by the (email_regex gem)[https://github.com/dougwig/email_regex] written by Doug Wiegley which "provides a valid email regex that conforms to most valid RFC edges cases (disallows backticks), and allows for a few illegal patterns that are in common use".
+This gem uses the thorough email validation check used by the [email_regex gem](https://github.com/dougwig/email_regex) written by Doug Wiegley which "provides a valid email regex that conforms to most valid RFC edges cases (disallows backticks), and allows for a few illegal patterns that are in common use".
 
 ## Installation
 
