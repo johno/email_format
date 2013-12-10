@@ -18,7 +18,12 @@ describe EmailFormatValidator do
 
   context "with invalid emails" do
 
-    let(:invalid_emails) { %w(invalid_email@ another_invalid_email@@email.email) }
+    let(:invalid_emails) { %w(invalid_email@ 
+                              another_invalid_email@@email.email
+                              invalid
+                              bad@email@here
+                              @bad_email
+                              another@bad,email) }
 
     it "shouldn't be happy" do
       invalid_emails.each do |email|
