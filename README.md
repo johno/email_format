@@ -48,9 +48,7 @@ require 'email_format'
 
 class Awesome
   include ActiveModel::Validations
-
   attr_accessor :email
-
   validates :email, email_format: true
 end
 
