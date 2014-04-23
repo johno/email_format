@@ -32,4 +32,40 @@ describe EmailFormatValidator do
       end
     end
   end
+
+  context "with allow_blank: true" do
+
+    let(:fake_model)   { FakeModelWithBlankEmail.new }
+    let(:blank_emails) { ['', nil] }
+
+    it "should allow blank emails" do
+      blank_emails.each do |blank_email|
+        fake_model.email = blank_email
+        expect(fake_model.valid?).to be_true
+      end
+    end
+  end
+
+  context "with allow_nil: true" do
+
+    let(:fake_model) { FakeModelWithNilEmail.new }
+
+    context 'with a nil email' do
+
+      before { fake_model.email = nil }
+
+      it "should be valid" do
+        expect(fake_model.valid?).to be_true
+      end
+    end
+
+    context 'with an empty string email' do
+
+      before { fake_model = " " }
+
+      it "should be invalid" do
+        # expect(fake_model.valid?).to be_false
+      end
+    end
+  end
 end

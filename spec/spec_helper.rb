@@ -15,3 +15,19 @@ class FakeModel
 
   validates :email, email_format: true
 end
+
+class FakeModelWithBlankEmail
+  include ActiveModel::Validations
+
+  attr_accessor :email
+
+  validates :email, email_format: true, allow_blank: true
+end
+
+class FakeModelWithNilEmail
+  include ActiveModel::Validations
+
+  attr_accessor :email
+
+  validates :email, email_format: true, allow_nil: true
+end
