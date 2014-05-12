@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/johnotander/email_format.svg?branch=master)](https://travis-ci.org/johnotander/email_format)
 
-This gem uses the thorough email validation check used by the [email_regex](https://github.com/dougwig/email_regex) gem written by Doug Wiegley which "provides a valid email regex that conforms to most valid RFC edges cases (disallows backticks), and allows for a few illegal patterns that are in common use".
+This gem uses the thorough email validation implemented by the [email_regex](https://github.com/dougwig/email_regex) gem written by Doug Wiegley which "provides a valid email regex that conforms to most valid RFC edges cases (disallows backticks), and allows for a few illegal patterns that are in common use".
 
 ## Installation
 
