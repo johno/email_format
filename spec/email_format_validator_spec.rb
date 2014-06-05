@@ -11,7 +11,7 @@ describe EmailFormatValidator do
     it "should be happy" do
       valid_emails.each do |email|
         fake_model.email = email
-        expect(fake_model.valid?).to be_true
+        expect(fake_model.valid?).to be_truthy
       end
     end
   end
@@ -28,7 +28,7 @@ describe EmailFormatValidator do
     it "shouldn't be happy" do
       invalid_emails.each do |email|
         fake_model.email = email
-        expect(fake_model.valid?).to be_false
+        expect(fake_model.valid?).to be_falsey
       end
     end
   end
@@ -41,7 +41,7 @@ describe EmailFormatValidator do
     it "should allow blank emails" do
       blank_emails.each do |blank_email|
         fake_model.email = blank_email
-        expect(fake_model.valid?).to be_true
+        expect(fake_model.valid?).to be_truthy
       end
     end
   end
