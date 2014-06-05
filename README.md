@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-### `EmailFormat` Module
+### EmailFormat Module
 
 There's a `valid?` method in the `EmailFormat` module that accepts an email as an argument:
 
@@ -32,7 +32,7 @@ EmailFormat.valid?('invalid_email')   # => false
 EmailFormat.valid?('valid@email.com') # => true
 ```
 
-### `ActiveModel::Validations`
+### ActiveModel::Validations
 
 Using it is as simple as using the `validates` keyword in your model:
 
