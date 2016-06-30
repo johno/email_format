@@ -55,6 +55,20 @@ User.new('valid@email.com').valid? # => true
 User.new('invalid_email@@').valid? # => false
 ```
 
+By default, `email_format` is pretty relaxed, but there is a `strict` mode
+
+```ruby
+class User < ActiveRecord::Base
+
+  # ...
+
+  validates :email, email_format: { strict: true }
+
+  # ...
+
+end
+```
+
 Also, the model in question doesn't need to inherit from ActiveRecord::Base, you only need to `include ActiveModel::Validations` in your class:
 
 ```ruby
