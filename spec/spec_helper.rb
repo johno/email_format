@@ -12,6 +12,14 @@ class FakeModel
   validates :email, email_format: true
 end
 
+class FakeModelStrict
+  include ActiveModel::Validations
+
+  attr_accessor :email
+
+  validates :email, email_format: { strict: true }
+end
+
 class FakeModelWithBlankEmail
   include ActiveModel::Validations
 
